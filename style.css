@@ -21,7 +21,7 @@
     position: relative;
     top: 167px;
     left: 580px;
-    animation: Mov 1.5s infinite linear;
+    animation: MovC 750ms infinite linear;
 }
 #sun {
     width: 80px;
@@ -53,16 +53,6 @@
     justify-content: center;
     align-items: center;
 }
-/*#dpo {
-    width: 50px;
-    height: 40px;
-    background-image: url(img/dpo.png);
-    background-size: 50px 40px;
-    position: relative;
-    top: 86px;
-    left: 300px;
-    animation: Mov 4s infinite linear;
-}*/
     @keyframes Mov {
         0% {
             left: 600px;
@@ -72,26 +62,30 @@
             left: -20px;
         }
     }
+    @keyframes MovC {
+        0% {
+            left: 600px;
+        }
+        100% {
+            left: -20px;
+        }
+    }
 
-    .jump {
-    animation: jump 1s;
+.jump {
+    animation: jump 0.5s infinite ease-in-out;
 }
 
 @keyframes jump {
     0% {
         top: 200px;
-        left: 20px;
+        animation-timing-function: ease-out;
     }
-    33% {
+    50% {
         top: 140px;
-        left: 30px;
-    }
-    66% {
-        top: 200px;
-        left: 30px;
     }
     100% {
-        left: 20px;
         top: 200px;
+        left: 20px;
+        animation-timing-function: ease-in;
     }
 }
